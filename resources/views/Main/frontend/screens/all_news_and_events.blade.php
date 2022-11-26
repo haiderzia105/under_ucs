@@ -131,7 +131,8 @@
                                     @endif
                                 </div>
                                 <p class="card-text text-black"> {{ \Illuminate\Support\Str::limit($newsevent->short_description, 300, $end='...') }}</p>
-                                <a href="{{ route('news-and-events',$newsevent->slug) }}" class="btn bg-red press-button"><i class="fa fa-angle-right me-2 angle-tag" aria-hidden="true"></i> READ MORE</a>
+                                <a href="{{ route('press-release-detail',$newsevent->slug) }}" class="btn bg-red press-button"><i class="fa fa-angle-right me-2 angle-tag" aria-hidden="true"></i> READ MORE</a>
+                         
                             </div>
                         </div>
                         @endforeach

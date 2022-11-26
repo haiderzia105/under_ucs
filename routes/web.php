@@ -13,6 +13,7 @@ use App\Http\Controllers\Auth\AdminAuthenticatedSessionController;
 
 use App\Http\Controllers\Front\ContactsController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\NewsEventsController;
 use App\Http\Controllers\Front\AllNewsAndEventsController;
 use App\Http\Controllers\Front\AllPressReleasesController;
 use App\Http\Controllers\Front\PressReleaseController;

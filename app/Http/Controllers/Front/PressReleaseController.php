@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Main\NewsAndEvents;
 use App\Models\Main\NewsCategories;
@@ -22,7 +23,7 @@ class PressReleaseController extends Controller
         //getting categories
         $coCurricularActivities=NewsCategories::where('id',1)->first();
         $allNewsAndEvents=NewsCategories::where('id',3)->first();
-        return view('Main.frontend.press_release_detail',compact('coCurricularActivities','allNewsAndEvents','newsEvents','recentsEvents'));
+        return view('Main.frontend.screens.press_release_detail',compact('coCurricularActivities','allNewsAndEvents','newsEvents','recentsEvents'));
     }
 
 

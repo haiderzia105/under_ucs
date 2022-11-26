@@ -75,6 +75,7 @@ class AllPressReleasesController extends Controller
     $allNewsEvents=NewsAndEvents::with(['newsCategories','tags'])->where($where)->orderBy('event_date', 'DESC')->latest()->take(4)->get();
     // dd( $allNewsEvents);
     $allNewsEventDate = $allNewsEventDate->groupBy(DB::raw('year(event_date) desc'),DB::raw('month(event_date) desc'))->take(40)->get();
+   
     return view('Main.frontend.screens.all_news_and_events', compact('allNewsEvents','allcategories','allNewsEventDate','alltags','allPressRelease'))->with('i', ($request->input('page', 1) -1) * 20);
 }
                                     
