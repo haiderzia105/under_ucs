@@ -107,9 +107,11 @@ Route::get('user/contact', function () {
 Route::get('contact', [HomeController::class, 'contact'])->name('contact');
 Route::resource('contacts',ContactsController::class);
 // New and Events Front Controller
-Route::get('press-release/press-release-detail/{slug}', [PressReleaseController::class, 'index'])->name('press-release-detail');
-Route::get('press-release', [AllPressReleasesController::class, 'index'])->name('press-release');
-Route::get('press-release-searches',[AllPressReleasesController::class, 'pressLiveSearch'])->name('press-release-searches');
-Route::get('news-and-events',[AllNewsAndEventsController::class, 'index'])->name('news-and-events');
-Route::get('press-release-tag/{slug}',[AllNewsAndEventsController::class, 'tags'])->name('news-and-events-tag');
-Route::get('departments/news-and-events/{slug}',[AllNewsAndEventsController::class, 'NewsDetail'])->name('DptNewsEvents');
+Route::get('news-and-events/news-and-events-detail/{slug}', [NewsEventsController::class, 'index'])->name('news-and-events-detail');
+Route::get('news-and-events', [AllNewsAndEventsController::class, 'index'])->name('news-and-events');
+Route::get('news-and-events-searches',[AllNewsAndEventsController::class, 'pressLiveSearch'])->name('news-and-events-searches');
+Route::get('press-release',[AllPressReleasesController::class, 'index'])->name('press-release');
+// Route::get('press-release-tag/{slug}',[AllNewsAndEventsController::class, 'tags'])->name('news-and-events-tag');
+// Route::get('departments/news-and-events/{slug}',[AllNewsAndEventsController::class, 'NewsDetail'])->name('DptNewsEvents');
+
+

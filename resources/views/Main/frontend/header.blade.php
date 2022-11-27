@@ -83,7 +83,7 @@
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownUpcoming">
           <li><a class="dropdown-item enroll disabled" href="#"><b>How to enroll?</b></a></li>
-          <li><a class="dropdown-item" href="{{route('press-release')}}">Admission process</a></li>
+          <li><a class="dropdown-item" href="{{route('news-and-events')}}">Admission process</a></li>
           <li><a class="dropdown-item" href="#">Tution fees</a></li>
           <li><a class="dropdown-item" href="#">Admission office</a></li>
           <li><a class="dropdown-item news disabled" href="#"><b>News</b></a></li>

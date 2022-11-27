@@ -31,15 +31,6 @@
                 @endforeach
                 </select>
             </div>
-            <div class="mb-3 me-3">
-                <label for="projects" class="form-label"></label>
-                <select name="project" class="form-control" id="project" value="" >
-                <option value="0">Select Project</option>
-                @foreach($allprojects as $allproject)
-                <option value="{{$allproject['slug']}}" {{(isset(request()->project) && $allproject->slug == request()->project ? 'selected': '' )}}>{{$allproject['name']}}</option>
-                @endforeach
-                </select>
-            </div>
              <div class="mb-3 me-3">
                 <label for="date" class="form-label"></label>
                 <select name="date" class="form-control" id="date" value="" >
@@ -76,8 +67,8 @@
                         @foreach ($allcategories as $newsevent)
                         <div class="yearly-tags pb-2 pt-3">
                             @if (isset($newsevent->name))
-                            {{-- <a href="{{'https://tuf.edu.pk/n/press-release?slug='.$newsevent->slug}}"><i class="fa fa-long-arrow-right text-red me-3"></i>{{ $newsevent->name}}</a> --}}
-                            <a href="{{url('/press-release?slug='.$newsevent->slug)}}"><i class="fa fa-long-arrow-right text-red px-1 me-3"></i>{{ $newsevent->name}}</a>
+                            {{-- <a href="{{'https://tuf.edu.pk/n/news-and-events?slug='.$newsevent->slug}}"><i class="fa fa-long-arrow-right text-red me-3"></i>{{ $newsevent->name}}</a> --}}
+                            <a href="{{url('/news-and-events?slug='.$newsevent->slug)}}"><i class="fa fa-long-arrow-right text-red px-1 me-3"></i>{{$newsevent->name}}</a>
                             @endif 
                         </div>
                         @endforeach
@@ -92,7 +83,7 @@
                             @foreach ($allNewsEventDate as $newseventdate)
                                 <div class="yearly-tags pb-2 pt-3">
                                     {{-- <a href="{{ request()->fullUrlWithQuery(['date' => date('M-Y', strtotime($newseventdate->event_date))]) }}"><i class="fa fa-long-arrow-right text-red me-3"></i>{{date('M  Y', strtotime($newseventdate->event_date)) }}</a> --}}
-                                    <a href="{{url('/press-release?date='.date('M-Y', strtotime($newseventdate->event_date)))}}"><i class="fa fa-long-arrow-right text-red px-1 me-3"></i>{{date('M  Y', strtotime($newseventdate->event_date)) }}</a>
+                                    <a href="{{url('/news-and-events?date='.date('M-Y', strtotime($newseventdate->event_date)))}}"><i class="fa fa-long-arrow-right text-red px-1 me-3"></i>{{date('M  Y', strtotime($newseventdate->event_date)) }}</a>
                                 </div>
                             @endforeach
                         </div>
@@ -107,7 +98,7 @@
                             @foreach ($alltags as $alltag)
                                 @if (isset($alltag->name))
                                     {{-- <a href="{{ request()->fullUrlWithQuery(['tag' => $alltag->slug]) }}" class="btn bg-red text-white mb-2 me-2">{{ $alltag->name}}</a> --}}
-                                    <a href="{{url('/press-release?tag='.$alltag->slug)}}" class="btn bg-red anchor-tag mx-1 mb-2 ">{{ $alltag->name}}</a>  
+                                    <a href="{{url('/news-and-events?tag='.$alltag->slug)}}" class="btn bg-red anchor-tag mx-1 mb-2 ">{{ $alltag->name}}</a>  
                                 @endif
                             @endforeach
                         </div>
@@ -131,7 +122,7 @@
                                     @endif
                                 </div>
                                 <p class="card-text text-black"> {{ \Illuminate\Support\Str::limit($newsevent->short_description, 300, $end='...') }}</p>
-                                <a href="{{ route('press-release-detail',$newsevent->slug) }}" class="btn bg-red press-button"><i class="fa fa-angle-right me-2 angle-tag" aria-hidden="true"></i> READ MORE</a>
+                                <a href="{{ route('news-and-events-detail',$newsevent->slug) }}" class="btn bg-red press-button"><i class="fa fa-angle-right me-2 angle-tag" aria-hidden="true"></i> READ MORE</a>
                          
                             </div>
                         </div>
