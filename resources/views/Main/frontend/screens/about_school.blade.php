@@ -101,15 +101,17 @@
 
   {{-- sign up form  --}}
 
-  <form class="about-signup mx-3 px-2 py-4">
-    <p class="text-center"><b>Sign up for the “The right school for a bright future” newsletter for free.</b></p>
+
+  <form class="about-signup mx-3 px-2 py-4" action="{{route('subscribe.store')}}" method="POST">
+  @csrf
+  <p class="text-center"><b>Sign up for the “The right school for a bright future” newsletter for free.</b></p>
     <div class="mb-3 mt-3">
       <label for="AboutEmail" class="form-label">Your Email</label>
-      <input type="email" class="form-control" id="AboutEmail" placeholder="Email">
+      <input type="email" class="form-control" id="email" placeholder="Email" name="email">
     </div>
     <div class="mb-3">
       <label for="AboutName" class="form-label">Your Name</label>
-      <input type="name" class="form-control" id="AboutName" placeholder="Name">
+      <input type="name" class="form-control" id="name" placeholder="Name" name="name">
     </div>
     <button type="submit" class="btn btn-primary">Subscribe</button>
   </form>

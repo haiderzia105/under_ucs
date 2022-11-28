@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\NewsAndEventsController;
 use App\Http\Controllers\Auth\AdminAuthenticatedSessionController;
 
 use App\Http\Controllers\Front\ContactsController;
+use App\Http\Controllers\Front\SubscribeController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\NewsEventsController;
 use App\Http\Controllers\Front\AllNewsAndEventsController;
@@ -102,6 +103,8 @@ Route::get('/contact', function () {
 // Contact Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('contacts',ContactsController::class);
+
+Route::resource('/subscribe',SubscribeController::class);
 // New and Events Front Controller
 Route::get('news-and-events/news-and-events-detail/{slug}', [NewsEventsController::class, 'index'])->name('news-and-events-detail');
 Route::get('news-and-events', [AllNewsAndEventsController::class, 'index'])->name('news-and-events');
