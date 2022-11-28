@@ -93,6 +93,10 @@ list-style-type: none;
     font-family: Roboto-Bold;
     font-size: 1.25rem;
 }
+.sticky-wrapper .navbar .navbar-nav li a:hover{
+    color: var(--bs-light-gold);
+    transform: scale(1.1);
+}
 .sticky-wrapper .navbar .navbar-nav .dropdown .dropdown-menu li a{
     color: var(--bs-white);
     font-family: Roboto-Bold;
@@ -381,6 +385,17 @@ background-color: var(--bs-green);
     width: 100%;
     background-image: url("images/chemicals.png");
 } 
+.home-wrapper .latest-news .latest-news-cards .card .card-body .card-text{
+    text-decoration: none;
+    color: black;
+    font-family: Roboto;
+    font-size: 1.25rem;
+}
+.home-wrapper .latest-news .latest-news-cards  .news-button .tuf-tab-bg{
+    background-color: var(--bs-green);
+    color: var(--bs-white);
+    font-family: Roboto-Bold;
+}
 /* .home-wrapper .chemical-counter .chemical-text{
   position: absolute;
   top: 50%;
@@ -986,6 +1001,9 @@ width: 100px;
   padding-top: 50%;
   width: 100%;
 }
+.news-letter-news .main-card h3{
+    font-family: Roboto-Bold;
+}
 .news-letter-news .text-adjust-card p {
   font-family: Roboto-Bold;
   text-align:  justify;
@@ -1032,3 +1050,61 @@ width: 100px;
     width: 100%;
     height: 500px;
 }
+
+
+/* All News & Events */
+.news-or-events-wrapper .news-explore .form-filters{
+    /* border: 1px solid  var(--bs-green); */
+}
+.news-or-events-wrapper .news-explore .form-filters .filter-button button{
+    background-color: var(--bs-green);
+    box-shadow: none;
+    border: none;
+    font-family: Roboto-Bold;
+    font-size: 1.25rem;
+}
+.news-or-events-wrapper .news-explore .form-filters .form-control{
+    font-family: Roboto-Bold;
+    box-shadow: none;
+    border: 1px solid var(--bs-green);
+    font-size: 1.25rem;
+}
+.news-or-events-wrapper .news-explore .form-filters .form-control option{
+    background-color: var(--bs-green);
+    color: var(--bs-white);
+   
+}
+.news-or-events-wrapper .news-explore .form-filters .form-control option:hover{
+    background-color: black;
+    color: var(--bs-white);
+   
+}
+
+
+/* News & Events Detail */
+.press-release-detail-wrapper .event-details{
+    font-family: Roboto-Bold;
+}
+.press-release-detail-wrapper .headings h1{
+    font-family: Roboto-Bold;
+}
+.press-release-detail-wrapper .headings p{
+    font-family: Roboto;
+    font-size: 1.25rem;
+}
+.press-release-detail-wrapper .press-detail .press-thumbnail {
+    border: 1px solid var(--bs-green);
+}
+.press-release-detail-wrapper  .press-release-slide h4{
+    font-family: Roboto-Bold;
+}
+.press-release-detail-wrapper .event-box{
+border-bottom: 1px solid var(--bs-green);
+}
+/* .press-release-detail-wrapper{
+    background-image: url("images/camb-two-one.jpg");
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat, repeat;
+    object-fit: cover;
+} */

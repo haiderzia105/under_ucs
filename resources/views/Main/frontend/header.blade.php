@@ -62,22 +62,10 @@
       <li class="nav-item">
         <a class="nav-link" href="{{route('admission')}}">Admission</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownJobs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Jobs
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdownJobs">
-          <li><a class="dropdown-item enroll disabled" href="#"><b>How to enroll?</b></a></li>
-          <li><a class="dropdown-item" href="#">Admission process</a></li>
-          <li><a class="dropdown-item" href="#">Tution fees</a></li>
-          <li><a class="dropdown-item" href="#">Admission office</a></li>
-          <li><a class="dropdown-item news disabled" href="#"><b>News</b></a></li>
-          <li><a class="dropdown-item" href="#">Parent-School Contact</a></li>
-          <li><a class="dropdown-item" href="#">Parent-School Contact</a></li>
-          <li><a class="dropdown-item" href="#">Additional Services</a></li>
-        </ul>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Jobs</a>
       </li>
-      <li class="nav-item dropdown">
+      {{-- <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUpcoming" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Upcoming Events
         </a>
@@ -91,6 +79,9 @@
           <li><a class="dropdown-item" href="#">Parent-School Contact</a></li>
           <li><a class="dropdown-item" href="#">Additional Services</a></li>
         </ul>
+      </li> --}}
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('news-and-events')}}">Upcoming Events</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="{{route('contact')}}">Contact Us</a>

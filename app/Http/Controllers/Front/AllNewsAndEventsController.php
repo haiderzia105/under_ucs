@@ -27,7 +27,7 @@ class AllNewsAndEventsController extends Controller
             $category = $request->slug;
             $cat= NewsCategories::where('slug',$category)->first(); 
             $categoryId =[$cat->id];
-            // dd($categoryId);
+            
         }
         else{
             $catdetail= 1;
@@ -47,19 +47,19 @@ class AllNewsAndEventsController extends Controller
         }
     
         // Date & Tag
-        if(empty($request->slug) && empty($request->project) && !empty($request->date) && !empty($request->tag)){
+        if(empty($request->slug) && !empty($request->date) && !empty($request->tag)){
             $allPressRelease = NewsAndEvents::where('tag' , 'LIKE' , '%'.$tagName.'%')->whereMonth('event_date',$month)->whereYear('event_date',$year)->latest()->paginate(04);
         }
         // Tag
-        elseif(empty($request->slug) && empty($request->project) && empty($request->date) && !empty($request->tag)){
+        elseif(empty($request->slug) && empty($request->date) && !empty($request->tag)){
             $allPressRelease = NewsAndEvents::where('tag' , 'LIKE' , '%'.$tagName.'%')->latest()->paginate(04);
         }
         // Category & Tag
-        elseif(!empty($request->slug) && empty($request->project) && empty($request->date) && !empty($request->tag)){
+        elseif(!empty($request->slug) && empty($request->date) && !empty($request->tag)){
             $allPressRelease = NewsAndEvents::where('tag' , 'LIKE' , '%'.$tagName.'%')->whereIn('news_categories_id',$categoryId)->latest()->paginate(04);
         }
         // Category & Date & Tag
-        elseif(!empty($request->slug) && empty($request->project) && !empty($request->date) && !empty($request->tag)){
+        elseif(!empty($request->slug) && !empty($request->date) && !empty($request->tag)){
             $allPressRelease = NewsAndEvents::where('tag' , 'LIKE' , '%'.$tagName.'%')->whereMonth('event_date',$month)->whereYear('event_date',$year)->whereIn('news_categories_id',$categoryId)->latest()->paginate(04);
         }
         else{

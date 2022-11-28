@@ -18,47 +18,72 @@
     </div>
     <div class="news-explore">
         <div class="container">
-
             <div class="row py-3">
-
-            {{-- <form class="d-lg-flex justify-content-center" method="GET" action="{{route('press-release')}}" >
-            <div class="mb-3 me-3">
-                <label for="categories" class="form-label"></label>
-                <select name="slug" class="form-control" id="slug" value="" >
-                <option value="0">Select Category</option>
-                @foreach($allcategories as $newsevent)
-                <option  value="{{$newsevent['slug']}}" {{(isset(request()->slug) && $newsevent->slug == request()->slug ? 'selected': '' )}}>{{$newsevent['name']}}</option>
-                @endforeach
-                </select>
-            </div>
-             <div class="mb-3 me-3">
-                <label for="date" class="form-label"></label>
-                <select name="date" class="form-control" id="date" value="" >
-                <option value="0">Select Year</option>
-                @foreach($allNewsEventDate as $newseventdate)
-                <option value="{{date('M-Y', strtotime($newseventdate['event_date']))}}"{{(isset(request()->date) && date('M-Y', strtotime($newseventdate->event_date)) == request()->date ? 'selected': '' )}}>{{date('M  Y', strtotime($newseventdate['event_date'])) }}</option>
-                @endforeach
-                </select>
-            </div>
-            
-            <div class="mb-3 me-3">
-                <label for="tags" class="form-label"></label>
-                <select name="tag" class="form-control" id="tag" value="" >
-                <option value="0">Select Tag</option>
-                @foreach($alltags as $alltag)
-                <option value="{{$alltag['slug']}}" {{(isset(request()->tag) && $alltag->slug == request()->tag ? 'selected': '' )}}>{{$alltag['name']}}</option>
-                @endforeach 
-                </select>
+                <div class="col-lg-8">
+                    <div class="news-letter-news mt-3">
+                        @foreach ($allPressRelease as $newsevent)
+                        <div class="card h-100 mx-0 mx-sm-3 my-4">
+                            <div class="main-card">
+                                <img src="{{URL('/')}}/Main/frontend/images/NewsAndEvents/{{$newsevent->thumbnail }}" class="news-and-events">
+                            </div>
+                            <div class="card-body mt-4 mb-3 ps-4 text-adjust-card">
+                                <div class="d-sm-flex d-inline">
+                                    <div class="d-inline me-2 me-md-5 text-sm-center">
+                                        <h3 class="mb-0">{{date('d', strtotime($newsevent->event_date)) }}</h3>
+                                        <p class="d-flex text-black mb-sm-3 mb-0">{{date('M', strtotime($newsevent->event_date)) }}-<span>{{date('Y', strtotime($newsevent->event_date)) }}</span></p>
+                                    </div>
+                                    @if (isset($newsevent->name))
+                                    <h2 class="card-title">{{ \Illuminate\Support\Str::limit($newsevent->name, 120) }}</h2>
+                                    @endif
+                                </div>
+                                <p class="card-text text-black"> {{ \Illuminate\Support\Str::limit($newsevent->short_description, 300, $end='...') }}</p>
+                                <a href="{{ route('news-and-events-detail',$newsevent->slug) }}" class="btn bg-red press-button"><i class="fa fa-angle-right me-2 angle-tag" aria-hidden="true"></i> READ MORE</a>
+                         
+                            </div>
+                        </div>
+                        @endforeach
+                        {{-- end card  --}}
+                    </div>
+                    <div class="d-flex justify-content-center" style="overflow: hidden;">
+                        {{ $allPressRelease->withQueryString()->links() }}
+                    </div>
                 </div>
-            
-            <div class="mt-4  filter-button">
-            <button type="submit" class="btn btn-primary px-4 me-1 mb-2">Search</button>
-            <button type="delete" class="btn btn-danger px-4 mb-2" onclick="Remove_options()">Reset</button>
-            </div>
-            </form> --}}
-
-            <div class="row">
                 <div class="col-lg-4">
+                    <form class="d-lg-inline justify-content-center form-filters mt-3 " method="GET" action="{{route('news-and-events')}}" >
+                        <div class="mb-3">
+                        <label for="categories" class="form-label"></label>
+                        <select name="slug" class="form-control" id="slug" value="" >
+                        <option value="0">Select Category</option>
+                        @foreach($allcategories as $newsevent)
+                        <option  value="{{$newsevent['slug']}}" {{(isset(request()->slug) && $newsevent->slug == request()->slug ? 'selected': '' )}}>{{$newsevent['name']}}</option>
+                        @endforeach
+                        </select>
+                        </div>
+                         <div class="mb-3">
+                        <label for="date" class="form-label"></label>
+                        <select name="date" class="form-control" id="date" value="" >
+                        <option value="0">Select Year</option>
+                        @foreach($allNewsEventDate as $newseventdate)
+                        <option value="{{date('M-Y', strtotime($newseventdate['event_date']))}}"{{(isset(request()->date) && date('M-Y', strtotime($newseventdate->event_date)) == request()->date ? 'selected': '' )}}>{{date('M  Y', strtotime($newseventdate['event_date'])) }}</option>
+                        @endforeach
+                        </select>
+                        </div>
+                        
+                        <div class="mb-3">
+                        <label for="tags" class="form-label"></label>
+                        <select name="tag" class="form-control" id="tag" value="" >
+                        <option value="0">Select Tag</option>
+                        @foreach($alltags as $alltag)
+                        <option value="{{$alltag['slug']}}" {{(isset(request()->tag) && $alltag->slug == request()->tag ? 'selected': '' )}}>{{$alltag['name']}}</option>
+                        @endforeach 
+                        </select>
+                        </div>
+                        
+                        <div class="mt-4  filter-button">
+                        <button type="submit" class="btn btn-primary search px-4 me-1 mb-2">Search</button>
+                        <button type="delete" class="btn btn-danger reset px-4 mb-2" onclick="Remove_options()">Reset</button>
+                        </div>
+                        </form>
                     {{-- category  --}}
                     <div class="recent-post mt-5">
                         <div class="bg-colr py-2">
@@ -89,7 +114,7 @@
                         </div>
                     </div>
 
-                  <div class="recent-post mt-4">
+                  <div class="recent-post mt-3">
                         <div class="bg-colr py-2">
                             <h6 class="ms-4 mb-0">Tags</h6>
                         </div>
@@ -104,37 +129,8 @@
                         </div>
                   </div> 
                   </div>
-                <div class="col-lg-8">
-                    <div class="news-letter-news mt-5">
-                        @foreach ($allPressRelease as $newsevent)
-                        <div class="card h-100 mx-0 mx-sm-3 my-4">
-                            <div class="main-card">
-                                <img src="{{URL('/')}}/Main/frontend/images/NewsAndEvents/{{$newsevent->thumbnail }}" class="news-and-events">
-                            </div>
-                            <div class="card-body mt-4 mb-3 ps-4 text-adjust-card">
-                                <div class="d-sm-flex d-inline">
-                                    <div class="d-inline me-2 me-md-5 text-sm-center">
-                                        <h3 class="mb-0">{{date('d', strtotime($newsevent->event_date)) }}</h3>
-                                        <p class="d-flex text-black mb-sm-3 mb-0">{{date('M', strtotime($newsevent->event_date)) }}-<span>{{date('Y', strtotime($newsevent->event_date)) }}</span></p>
-                                    </div>
-                                    @if (isset($newsevent->name))
-                                    <h2 class="card-title">{{ \Illuminate\Support\Str::limit($newsevent->name, 120) }}</h2>
-                                    @endif
-                                </div>
-                                <p class="card-text text-black"> {{ \Illuminate\Support\Str::limit($newsevent->short_description, 300, $end='...') }}</p>
-                                <a href="{{ route('news-and-events-detail',$newsevent->slug) }}" class="btn bg-red press-button"><i class="fa fa-angle-right me-2 angle-tag" aria-hidden="true"></i> READ MORE</a>
-                         
-                            </div>
-                        </div>
-                        @endforeach
-                        {{-- end card  --}}
-                    </div>
-                    <div class="d-flex justify-content-center" style="overflow: hidden;">
-                        {{ $allPressRelease->withQueryString()->links() }}
-                    </div>
-                </div>
 
-            </div>
+
         </div>
     </div>
 </div> {{-- news wrapper ends here --}}

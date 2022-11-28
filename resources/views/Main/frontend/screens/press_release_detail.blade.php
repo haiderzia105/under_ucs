@@ -34,7 +34,7 @@
                                                 </div>
                                         </div>  <!--department-campuses-ends -->
                                         @if (isset($events->short_description))
-                                            <a class="card-text mt-3 mb-3" href="{{ route('press-release',$events->slug) }}">  <!--card text starts -->
+                                            <a class="card-text mt-3 mb-3" href="{{ route('news-and-events',$events->slug) }}">  <!--card text starts -->
                                                 {{ \Illuminate\Support\Str::limit($events->short_description, 150, $end='...') }}
 
                                                 <span class="read-more-link read-more">Read More<i class="fa fa-caret-right" aria-hidden="true"></i></span>

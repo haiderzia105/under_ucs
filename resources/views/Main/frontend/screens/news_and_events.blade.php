@@ -2,7 +2,9 @@
 @section('content')
 <div class="press-release-detail-wrapper">
     <div class="container">
-        <div class="row mt-5">
+        <div class="row g-0">
+            <h1 class="event-details mb-3 mt-5">News & Events Details</h1>
+            <div class="event-box g-0">
             <div class="col-lg-9">
                 <div class="press-detail">
                     <div class="press-thumbnail">
@@ -12,7 +14,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+      
         <div class="headings">
             {{-- title  --}}
             @if (isset($newsEvents->name))
@@ -22,10 +24,10 @@
             @if (isset($newsEvents->description))
                 <p class="text-black"> {!! $newsEvents->description  !!}</p>
             @endif
-        </div>
+        </div></div>
         {{-- Related Post start here --}}
         @if(!$recentsEvents->isEmpty())
-        <div class="press-release-slide mb-5">
+        <div class="press-release-slide mb-5 mt-2">
             <h4 class="text-red mb-3">Related Post</h4>
             <div class="owl-carousel owl-theme category-slides">
                 @foreach ($recentsEvents as $relates)

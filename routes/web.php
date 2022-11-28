@@ -69,9 +69,8 @@ Route::group(['middleware' => ['auth','verified','IsActive','xss'],'prefix'=>'ad
     Route::get('get/tuf-news-and-events',[NewsAndEventsController::class,'getNewsAndEvents'])->name('getNewsAndEvents');
     Route::delete('tuf-news-and-events-delete/{id}',[NewsAndEventsController::class,'delete'])->name('tuf-news-and-events.delete');
     Route::get('tuf-news-and-events-restore/{id}', [NewsAndEventsController::class,'restore'])->name('tuf-news-and-events.restore');
-     //Collab Organization Ck editor Uploads
-     Route::post('ckeditor/tuf-news-and-events-upload', [NewsAndEventsController::class,'upload'])->name('tuf-news-and-events-upload');
-   
+    //Collab Organization Ck editor Uploads
+    Route::post('ckeditor/tuf-news-and-events-upload',[NewsAndEventsController::class,'upload'])->name('tuf-news-and-events-upload');
 });
 Route::get('/logout', function () {
     Auth::logout();
@@ -83,28 +82,25 @@ require __DIR__.'/auth.php';
 Route::get("/page", function(){
     return view::make("dir.page");
  });
- Route::get('/', function () {
-    return view("main.frontend.index");
-});
-Route::get('user/index', function () {
-    return view("main.frontend.index");
-})->name('home');
+//  Route::get('/', function () {
+//     return view("main.frontend.index");
+// })->name('home');
 
-Route::get('user/about', function () {
+Route::get('/about', function () {
     return view("main.frontend.screens.about_school");
 })->name('about');
 
-Route::get('user/admission', function () {
+Route::get('/admission', function () {
     return view("main.frontend.screens.admission");
 })->name('admission');
 
-Route::get('user/contact', function () {
+Route::get('/contact', function () {
     return view("main.frontend.screens.contact_us");
 })->name('contact');
 
 
 // Contact Routes
-Route::get('contact', [HomeController::class, 'contact'])->name('contact');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('contacts',ContactsController::class);
 // New and Events Front Controller
 Route::get('news-and-events/news-and-events-detail/{slug}', [NewsEventsController::class, 'index'])->name('news-and-events-detail');

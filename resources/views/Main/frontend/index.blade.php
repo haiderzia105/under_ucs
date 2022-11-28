@@ -210,8 +210,38 @@
 <div class="latest-news-cards ">
 <div class="container-fluid g-0">
 <div class="row g-0 justify-content-center mx-sm-5 mx-2">
-
-<div class="col-lg-4 col-md-6">
+   
+        {{-- News and events  --}}
+                @if(!empty($newsandevents) || isset($newsandevents))
+                {{-- {{dd($newsandevents)}} --}}
+                @foreach ($newsandevents as $events)
+                
+                    <div class="col-lg-4 col-md-6 color-tag">
+                        <a href="{{ route('news-and-events-detail',$events->slug) }}">
+                            <div class="card h-100 my-2 me-2">
+                                @if (isset($events->thumbnail))
+                                <img src="{{URL('/')}}/Main/frontend/images/NewsAndEvents/{{$events->thumbnail }}" class="card-img-top" alt="...">
+                                @endif
+                                <div class="card-body">
+                                    @if (isset($events->short_description))
+                                        <p class="card-text">{{ \Illuminate\Support\Str::limit($events->short_description, 150, $end='...') }} </p>
+                                    @endif
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    @endforeach
+                @else
+                <div>
+                    <p>No Post</p>
+                </div>
+                @endif
+                <div class="news-button text-center my-4" >
+                    <a href="{{route('news-and-events')}}" class="btn tuf-tab-bg my-2 px-4"><i class="fa fa-angle-right me-1" aria-hidden="true"></i> MORE</a>
+                </div>
+            
+       
+{{-- <div class="col-lg-4 col-md-6">
 <div class="card one me-lg-3 mt-2">
 <div class="image-one">
 <img src="{{asset('Main/frontend/images/chairs.png')}}" class="img-fluid">
@@ -251,7 +281,7 @@
      <button type="button" class="btn btn-default green-read ps-0">Read more</button>
     </div>
     </div>
-</div>
+</div> --}}
 </div>
 </div>
 </div>

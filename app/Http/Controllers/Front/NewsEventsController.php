@@ -21,9 +21,8 @@ class NewsEventsController extends Controller
              //getting recent posts
         $recentsEvents = NewsAndEvents::with(['newsCategories'])->orderBy('id','desc')->take(4)->get();
         //getting categories
-        $coCurricularActivities=NewsCategories::where('id',1)->first();
         $allNewsAndEvents=NewsCategories::where('id',3)->first();
-        return view('Main.frontend.screens.news_and_events',compact('coCurricularActivities','allNewsAndEvents','newsEvents','recentsEvents'));
+        return view('Main.frontend.screens.news_and_events',compact('allNewsAndEvents','newsEvents','recentsEvents'));
     }
 
 

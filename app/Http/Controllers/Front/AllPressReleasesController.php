@@ -13,7 +13,7 @@ class AllPressReleasesController extends Controller
 {
      public function index(Request $request)
      {
-         return redirect('/news-and-events?slug=news-events');
+        //  return redirect('/news-and-events?slug=news-events');
      }
     // public function NewsDetail(Request $request , $slug)
     // {
