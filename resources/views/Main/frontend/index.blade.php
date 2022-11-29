@@ -218,7 +218,7 @@
                 {{-- {{dd($newsandevents)}} --}}
                 @foreach ($newsandevents as $events)
                 <div class="item">
-                    <div class="col-lg-12 col-md-6 color-tag">
+                    <div class="col-lg-12 color-tag">
                         <a href="{{ route('news-and-events-detail',$events->slug) }}">
                             <div class="card h-100 my-2 me-2">
                                 @if (isset($events->thumbnail))

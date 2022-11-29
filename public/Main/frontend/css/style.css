@@ -401,6 +401,9 @@ background-color: var(--bs-green);
     width: 100%;
     object-fit: contain;
 }
+.home-wrapper .latest-news .latest-news-cards  .owl-carousel .item .card {
+    height: 400px;
+}
 /* .home-wrapper .chemical-counter .chemical-text{
   position: absolute;
   top: 50%;
@@ -1102,6 +1105,10 @@ width: 100px;
 }
 .press-release-detail-wrapper  .press-release-slide h4{
     font-family: Roboto-Bold;
+}
+.press-release-detail-wrapper  .press-release-slide .owl-carousel .item .testimonials img{
+    height: 150px;
+    object-fit: cover;
 }
 .press-release-detail-wrapper .event-box{
 border-bottom: 1px solid var(--bs-green);
