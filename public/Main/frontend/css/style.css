@@ -37,7 +37,7 @@ border-bottom-left-radius: 60px;
 }
 /* Header Style */
 .header-top{
-    background-image: url("images/bg_header.jpg");
+    background-image: url(../images/bg_header_1.jpg);
 }
 .border-header{
     border-bottom: 0.5px solid black;
@@ -193,7 +193,7 @@ background-color: var(--bs-green);
 
 /*Footer style*/
 .footer-area{
-    background: #18a166 url('images/veins.png') repeat center top;
+    background: #18a166 url(../images/veins.png) repeat center top;
 }
 .footer-area .footer-widget-container .single-footer-widget h4{
     color: var(--bs-white);
@@ -383,7 +383,7 @@ background-color: var(--bs-green);
 .home-wrapper .chemical-counter {
     position: relative;
     width: 100%;
-    background-image: url("images/chemicals.png");
+    background-image: url(../images/chemicals.png);
 } 
 .home-wrapper .latest-news .latest-news-cards .card .card-body .card-text{
     text-decoration: none;
