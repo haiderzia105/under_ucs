@@ -396,6 +396,11 @@ background-color: var(--bs-green);
     color: var(--bs-white);
     font-family: Roboto-Bold;
 }
+.home-wrapper .latest-news .latest-news-cards  .owl-carousel .item .card img{
+    height: 150px;
+    width: 100%;
+    object-fit: contain;
+}
 /* .home-wrapper .chemical-counter .chemical-text{
   position: absolute;
   top: 50%;

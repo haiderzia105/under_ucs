@@ -212,11 +212,13 @@
 <div class="row g-0 justify-content-center mx-sm-5 mx-2">
    
         {{-- News and events  --}}
+        <div class="owl-carousel owl-theme" id="owl-second-home">
+            
                 @if(!empty($newsandevents) || isset($newsandevents))
                 {{-- {{dd($newsandevents)}} --}}
                 @foreach ($newsandevents as $events)
-                
-                    <div class="col-lg-4 col-md-6 color-tag">
+                <div class="item">
+                    <div class="col-lg-12 col-md-6 color-tag">
                         <a href="{{ route('news-and-events-detail',$events->slug) }}">
                             <div class="card h-100 my-2 me-2">
                                 @if (isset($events->thumbnail))
@@ -230,12 +232,15 @@
                             </div>
                         </a>
                     </div>
+                    </div>
                     @endforeach
                 @else
+          
                 <div>
                     <p>No Post</p>
                 </div>
                 @endif
+            </div>
                 <div class="news-button text-center my-4" >
                     <a href="{{route('news-and-events')}}" class="btn tuf-tab-bg my-2 px-4"><i class="fa fa-angle-right me-1" aria-hidden="true"></i> MORE</a>
                 </div>
