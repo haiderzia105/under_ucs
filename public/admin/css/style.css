@@ -12,6 +12,7 @@
     --orange:#FF9800;
     --dark-yellow:#ff9600 ;
     --light-blue:#FF9800;
+    --bs-green:#18a166;
 }
 body, html {
     height: 100%;
@@ -72,7 +73,8 @@ body {
     white-space: nowrap;
     position: relative;
     border-bottom: 1px solid var(--gray);
-    background: url(../images/user-img-background.jpg) no-repeat no-repeat;
+    /* background: url(../images/user-img-background.jpg) no-repeat no-repeat; */
+    background-color: var(--bs-green);
     height: 135px;
 }
 .sidebar .user-info .image {
@@ -177,7 +179,7 @@ body {
     color: var(--red);
 }
 .header-bg{
-    background: var(--red);
+    background: var(--bs-green);
     height: 65px;
     align-items: center;
 }
@@ -337,9 +339,9 @@ body {
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
 .dataTables_wrapper .dataTables_paginate .paginate_button.current{
-    background: var(--red);
+    background: var(--bs-green);
     color: var(--white) !important;
-    border-color: var(--red);
+    border-color: var(--bs-green);
 }
 table.dataTable tbody th, table.dataTable tbody td{
     vertical-align: middle;
@@ -352,6 +354,12 @@ table.dataTable tbody th, table.dataTable tbody td{
 .btn-warning, .btn-warning:hover, .btn-warning:active, .btn-warning:focus{
     background-color: var(--dark-yellow) !important;
     color: var(--white) !important;
+}
+.main-wrapper .widget-list .widget-holder .widget-bg .widget-heading .btn{
+    background-color: var(--bs-green) !important;
+}
+.main-wrapper .widget-list .widget-holder .widget-bg .widget-body button{
+    background-color: var(--bs-green) !important;
 }
 @media (max-width: 768px) {
     .sidebar {

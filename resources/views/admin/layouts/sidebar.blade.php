@@ -115,7 +115,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle waves-effect" href="#" id="contact" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <span>
-                    New Categories
+                    News Categories
                 </span>
                     <i class="fa fa-plus"></i>
                 </a>
@@ -138,7 +138,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="contact">
                     @can('tags-create')
-                    <li><a class="dropdown-item" href="{{route('tags.create')}}">Create New Tags</a></li>
+                    <li><a class="dropdown-item" href="{{route('tags.create')}}">Create & View New Tags</a></li>
                 </ul>
                     @endcan
                 </li>

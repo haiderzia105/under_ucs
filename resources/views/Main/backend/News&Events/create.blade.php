@@ -84,7 +84,8 @@
                                               <!--Label For Faculty ID-->
                                            <label for="tag" class="col-form-label required-form-label col-md-2 col-sm-2 mb-0 text-left text-sm-right">Tag</label>
                                            <div class="col-md-4 col-sm-10">               
-                                               <select class="form-control tag-multiple" id="tag" name="tag[]" multiple="multiple">
+                                               {{-- <select class="form-control tag-multiple" id="tag" name="tag[]" multiple="multiple"> --}}
+                                                <select class="form-control" id="tag" name="tag[]">
                                                 <option value="" selected>Choose Tag...</option>
                                                    @foreach($newstag as $newtag)
                                                        <option value="{{$newtag->slug}}">{{$newtag->name}}</option>
